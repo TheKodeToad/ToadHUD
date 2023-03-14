@@ -13,21 +13,23 @@ public abstract class TextHud extends BackgroundHud {
 
 	private final TrackedValue<Integer> fg = fg();
 	private final TrackedValue<Boolean> fgShadow = fgShadow();
+	private final TrackedValue<Integer> padding = padding();
 
 	@Override
 	protected void render(MatrixStack matrices, int x, int y, int width, int height) {
 		super.render(matrices, x, y, width, height);
-		renderText(matrices, getText(), x, y);
+		renderText(matrices, getText(), width / 2F - getTextRenderer().getWidth(getText()) / 2,
+				height / 2F - getTextRenderer().fontHeight / 2);
 	}
 
 	@Override
 	protected int getWidth() {
-		return getTextRenderer().getWidth(getText());
+		return getTextRenderer().getWidth(getText()) + padding.value();
 	}
 
 	@Override
 	protected int getHeight() {
-		return getTextRenderer().fontHeight;
+		return getTextRenderer().fontHeight + padding.value();
 	}
 
 	@Override
@@ -43,11 +45,11 @@ public abstract class TextHud extends BackgroundHud {
 		return mc().textRenderer;
 	}
 
-	protected int renderText(MatrixStack matrices, Text text, int x, int y) {
+	protected int renderText(MatrixStack matrices, Text text, float x, float y) {
 		return renderText(matrices, text, x, y, fg.value());
 	}
 
-	protected int renderText(MatrixStack matrices, Text text, int x, int y, int rgba) {
+	protected int renderText(MatrixStack matrices, Text text, float x, float y, int rgba) {
 		if (fgShadow.value())
 			return getTextRenderer().drawWithShadow(matrices, text, x, y, rgba);
 

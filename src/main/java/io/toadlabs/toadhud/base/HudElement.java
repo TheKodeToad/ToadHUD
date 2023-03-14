@@ -58,4 +58,8 @@ public abstract class HudElement {
 		return TrackedValue.create(true, "fgShadow");
 	}
 
+	protected static TrackedValue<Integer> padding() {
+		return TrackedValue.create(3, "padding");
+	}
+
 }
