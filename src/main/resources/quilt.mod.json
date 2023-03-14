@@ -19,7 +19,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.toadlabs.toadhud.ToadHudMod"
+			"init": "io.toadlabs.toadhud.impl.ToadHudMod"
 		},
 		"depends": [
 			{
@@ -35,5 +35,6 @@
 				"versions": ">=1.19.3"
 			}
 		]
-	}
+	},
+	"mixin": "toadhud.mixins.json"
 }

@@ -1,6 +1,6 @@
 package io.toadlabs.toadhud.base;
 
-import static io.toadlabs.toadhud.Global.win;
+import static io.toadlabs.toadhud.common.Global.win;
 
 import org.quiltmc.config.api.Config;
 import org.quiltmc.config.api.Config.Creator;
@@ -19,9 +19,11 @@ public abstract class HudElement {
 		int width = getWidth();
 		int height = getHeight();
 
+		matrices.push();
 		// ignore gui scale - but avoid subpixels at all costs!
 		matrices.translate(x / win().getScaleFactor(), y / win().getScaleFactor(), 0);
 		render(matrices, x, y, width, height);
+		matrices.pop();
 	}
 
 	protected abstract void render(MatrixStack matrices, int x, int y, int width, int height);
@@ -42,12 +44,18 @@ public abstract class HudElement {
 		return enabled.value();
 	}
 
-	protected static TrackedValue<Colour> bg() {
-		return TrackedValue.create(new Colour(0x64000000), "bg");
+	// common options
+
+	protected static TrackedValue<Integer> bg() {
+		return TrackedValue.create(0x64000000, "bg");
 	}
 
-	protected static TrackedValue<Colour> fg() {
-		return TrackedValue.create(new Colour(0xFFFFFFFF), "fg");
+	protected static TrackedValue<Integer> fg() {
+		return TrackedValue.create(0xFFFFFFFF, "fg");
+	}
+
+	protected static TrackedValue<Boolean> fgShadow() {
+		return TrackedValue.create(true, "fgShadow");
 	}
 
 }

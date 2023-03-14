@@ -1,4 +1,4 @@
-package io.toadlabs.toadhud;
+package io.toadlabs.toadhud.common;
 
 import com.mojang.blaze3d.glfw.Window;
 
