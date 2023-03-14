@@ -4,7 +4,7 @@ import io.toadlabs.toadhud.common.TextHud;
 import io.toadlabs.toadhud.impl.mixin.MinecraftClientAccessor;
 import net.minecraft.text.Text;
 
-public class FpsHud extends TextHud {
+public final class FpsHud extends TextHud {
 
 	@Override
 	protected Text getText() {

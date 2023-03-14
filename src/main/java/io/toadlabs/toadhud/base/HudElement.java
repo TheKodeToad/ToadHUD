@@ -44,6 +44,10 @@ public abstract class HudElement {
 		return enabled.value();
 	}
 
+	public void setEnabled(boolean enabled) {
+		this.enabled.setValue(enabled, true);
+	}
+
 	// common options
 
 	protected static TrackedValue<Integer> bg() {

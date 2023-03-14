@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
+import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.toadlabs.toadhud.base.HudElement;
-import io.toadlabs.toadhud.impl.hud.FpsHud;
+import io.toadlabs.toadhud.impl.hud.Huds;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
-public final class ToadHudMod implements ModInitializer {
+public final class ToadHudMod implements ClientModInitializer {
 
 	private static final Identifier PHASE = new Identifier("toadhud", "render");
 	public static final Logger LOGGER = LoggerFactory.getLogger("ToadHud");
@@ -23,10 +23,11 @@ public final class ToadHudMod implements ModInitializer {
 	private final List<HudElement> elements = new ArrayList<>();
 
 	@Override
-	public void onInitialize(ModContainer mod) {
-		addElement(new FpsHud());
-		HudRenderCallback.EVENT.register(PHASE, this::render);
+	public void onInitializeClient(ModContainer mod) {
 		instance = this;
+
+		Huds.register();
+		HudRenderCallback.EVENT.register(PHASE, this::render);
 	}
 
 	private void render(MatrixStack matrices, float tickDelta) {
