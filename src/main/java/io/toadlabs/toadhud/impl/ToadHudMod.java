@@ -30,7 +30,12 @@ public final class ToadHudMod implements ModInitializer {
 	}
 
 	private void render(MatrixStack matrices, float tickDelta) {
-		elements.forEach((element) -> element.performRender(matrices));
+		for (HudElement element : elements) {
+			if (!element.isEnabled())
+				continue;
+
+			element.performRender(matrices);
+		}
 	}
 
 	public void addElement(HudElement element) {
