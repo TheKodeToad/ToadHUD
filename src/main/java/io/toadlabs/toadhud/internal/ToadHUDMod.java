@@ -42,8 +42,6 @@ public final class ToadHUDMod implements ClientModInitializer {
 				config.section(element.getId().toString(), element.getConfigCreator());
 		});
 		save();
-
-		Huds.FPS.setEnabled(true);
 	}
 
 	public void save() {

@@ -14,7 +14,7 @@ public class CpsListener {
 	public static void onMouseButton(long window, int button, int action, int modifiers) {
 		if (action != GLFW.GLFW_PRESS)
 			return;
-		if (mc().currentScreen == null)
+		if (mc().currentScreen != null)
 			return;
 
 		if (button == GLFW.GLFW_MOUSE_BUTTON_LEFT)

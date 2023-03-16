@@ -38,6 +38,7 @@ public abstract class TextHud extends BackgroundHud {
 		super.createConfig(builder);
 		builder.field(fg);
 		builder.field(fgShadow);
+		builder.field(padding);
 	}
 
 	protected abstract Text getText();
