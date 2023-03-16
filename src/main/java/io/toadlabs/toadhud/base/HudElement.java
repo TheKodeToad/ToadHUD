@@ -69,7 +69,7 @@ public abstract class HudElement {
 	}
 
 	protected static TrackedValue<Integer> padding() {
-		return TrackedValue.create(3, "padding");
+		return TrackedValue.create(6, "padding");
 	}
 
 }
