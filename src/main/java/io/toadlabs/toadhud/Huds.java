@@ -12,8 +12,8 @@ public final class Huds {
 
 	@ModInternal
 	public static void register() {
-		ToadHud.addElement(FPS);
-		ToadHud.addElement(CPS);
+		ToadHUD.addElement(FPS);
+		ToadHUD.addElement(CPS);
 	}
 
 }

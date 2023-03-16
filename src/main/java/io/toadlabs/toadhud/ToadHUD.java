@@ -1,12 +1,12 @@
 package io.toadlabs.toadhud;
 
 import io.toadlabs.toadhud.base.HudElement;
-import io.toadlabs.toadhud.internal.ToadHudMod;
+import io.toadlabs.toadhud.internal.ToadHUDMod;
 
-public final class ToadHud {
+public final class ToadHUD {
 
 	public static void addElement(HudElement element) {
-		ToadHudMod.instance.addElement(element);
+		ToadHUDMod.instance.addElement(element);
 	}
 
 }

@@ -16,12 +16,12 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
-public final class ToadHudMod implements ClientModInitializer {
+public final class ToadHUDMod implements ClientModInitializer {
 
 	private static final String ID = "toadhud";
 	private static final Identifier PHASE = new Identifier(ID, "render");
 	public static final Logger LOGGER = LoggerFactory.getLogger("ToadHUD");
-	public static ToadHudMod instance;
+	public static ToadHUDMod instance;
 
 	private final List<HudElement> elements = new ArrayList<>();
 	private Config config;

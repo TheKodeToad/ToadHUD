@@ -19,7 +19,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"client_init": "io.toadlabs.toadhud.internal.ToadHudMod"
+			"client_init": "io.toadlabs.toadhud.internal.ToadHUDMod"
 		},
 		"depends": [
 			{
