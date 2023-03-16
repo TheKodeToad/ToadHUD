@@ -15,7 +15,7 @@ public final class FpsHud extends TextHud {
 
 	@Override
 	public Identifier getId() {
-		return ToadHUDMod.id("cps");
+		return ToadHUDMod.id("fps");
 	}
 
 }
