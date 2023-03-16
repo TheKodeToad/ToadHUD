@@ -37,7 +37,7 @@ public final class ToadHUDMod implements ClientModInitializer {
 		Huds.register();
 		HudRenderCallback.EVENT.register(PHASE, this::render);
 
-		config = QuiltConfig.create(ID, "root", config -> {
+		config = QuiltConfig.create(ID, "elements", config -> {
 			for (HudElement element : elements)
 				config.section(element.getId().toString(), element.getConfigCreator());
 		});
