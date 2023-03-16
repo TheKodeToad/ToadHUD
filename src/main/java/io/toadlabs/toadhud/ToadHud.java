@@ -1,7 +1,7 @@
 package io.toadlabs.toadhud;
 
 import io.toadlabs.toadhud.base.HudElement;
-import io.toadlabs.toadhud.impl.ToadHudMod;
+import io.toadlabs.toadhud.internal.ToadHudMod;
 
 public final class ToadHud {
 

@@ -1,4 +1,4 @@
-package io.toadlabs.toadhud.impl.mixin;
+package io.toadlabs.toadhud.internal.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;

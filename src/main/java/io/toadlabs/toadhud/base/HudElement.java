@@ -2,11 +2,15 @@ package io.toadlabs.toadhud.base;
 
 import static io.toadlabs.toadhud.common.Global.win;
 
+import java.util.function.Consumer;
+
 import org.quiltmc.config.api.Config;
 import org.quiltmc.config.api.Config.Creator;
+import org.quiltmc.config.api.Config.SectionBuilder;
 import org.quiltmc.config.api.values.TrackedValue;
 
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.Identifier;
 
 public abstract class HudElement {
 
@@ -32,11 +36,11 @@ public abstract class HudElement {
 
 	protected abstract int getHeight();
 
-	protected void createConfig(Config.Builder builder) {
+	protected void createConfig(SectionBuilder builder) {
 		builder.field(enabled);
 	}
 
-	public final Creator getConfigCreator() {
+	public final Consumer<SectionBuilder> getConfigCreator() {
 		return this::createConfig;
 	}
 
@@ -47,6 +51,8 @@ public abstract class HudElement {
 	public void setEnabled(boolean enabled) {
 		this.enabled.setValue(enabled, true);
 	}
+
+	public abstract Identifier getId();
 
 	// common options
 

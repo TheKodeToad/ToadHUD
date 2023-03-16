@@ -3,6 +3,7 @@ package io.toadlabs.toadhud.common;
 import static io.toadlabs.toadhud.common.Global.mc;
 
 import org.quiltmc.config.api.Config.Builder;
+import org.quiltmc.config.api.Config.SectionBuilder;
 import org.quiltmc.config.api.values.TrackedValue;
 
 import net.minecraft.client.font.TextRenderer;
@@ -33,7 +34,7 @@ public abstract class TextHud extends BackgroundHud {
 	}
 
 	@Override
-	protected void createConfig(Builder builder) {
+	protected void createConfig(SectionBuilder builder) {
 		super.createConfig(builder);
 		builder.field(fg);
 		builder.field(fgShadow);

@@ -1,11 +1,11 @@
-package io.toadlabs.toadhud.impl.mixin;
+package io.toadlabs.toadhud.internal.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import io.toadlabs.toadhud.impl.CpsListener;
+import io.toadlabs.toadhud.internal.CpsListener;
 import net.minecraft.client.Mouse;
 
 @Mixin(Mouse.class)

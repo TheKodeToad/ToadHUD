@@ -1,6 +1,7 @@
 package io.toadlabs.toadhud.common;
 
 import org.quiltmc.config.api.Config.Builder;
+import org.quiltmc.config.api.Config.SectionBuilder;
 import org.quiltmc.config.api.values.TrackedValue;
 
 import io.toadlabs.toadhud.base.HudElement;
@@ -17,7 +18,7 @@ public abstract class BackgroundHud extends HudElement {
 	}
 
 	@Override
-	protected void createConfig(Builder builder) {
+	protected void createConfig(SectionBuilder builder) {
 		super.createConfig(builder);
 		builder.field(bg);
 	}

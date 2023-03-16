@@ -1,4 +1,4 @@
-package io.toadlabs.toadhud.impl;
+package io.toadlabs.toadhud.internal;
 
 import static io.toadlabs.toadhud.common.Global.mc;
 
